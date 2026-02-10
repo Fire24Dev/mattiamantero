@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattia Mantero | Digital Creative Director</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #fff;
+            --secondary: #1a1a1a;
+            --blue-glow: #0066ff;
+            --text-dim: #888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            color: var(--accent);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--blue-glow); border-radius: 10px; }
+
+        /* --- Navbar Minimal --- */
+        nav {
+            position: fixed; width: 100%; top: 0; z-index: 2000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 2rem 5%; mix-blend-mode: difference;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; }
+
+        /* --- Hero Section - Typo Focus --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; padding: 0 5%;
+            background: radial-gradient(circle at 50% 50%, #001f3f 0%, #000 70%);
+        }
+        .hero span { color: var(--blue-glow); font-weight: 300; font-size: 1.2rem; letter-spacing: 5px; }
+        .hero h1 { font-size: clamp(3.5rem, 12vw, 10rem); font-weight: 700; letter-spacing: -4px; line-height: 0.85; margin: 1rem 0; }
+        
+        /* --- Bento Grid Showcase --- */
+        .section-title { padding: 0 5%; font-size: 3rem; margin-bottom: 3rem; }
+        .bento-grid {
+            display: grid; padding: 0 5%;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 1.5rem;
+        }
+        .bento-item {
+            background: var(--secondary); border-radius: 30px;
+            padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;
+            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #333; position: relative; overflow: hidden;
+        }
+        .bento-item:hover { transform: scale(0.98); border-color: var(--blue-glow); box-shadow: 0 0 40px rgba(0, 102, 255, 0.2); }
+        
+        .large { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, #111, #000); }
+        .tall { grid-row: span 2; }
+        
+        .bento-item h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .bento-item p { color: var(--text-dim); font-size: 1rem; }
+        .icon-circle { 
+            width: 50px; height: 50px; background: var(--accent); color: #000; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin-bottom: 2rem; font-size: 1.2rem;
+        }
+
+        /* --- Work Cards --- */
+        .work-display {
+            margin-top: 2rem; border-radius: 20px;
+            height: 200px; background-size: cover; background-position: center;
+            border: 1px solid #444;
+        }
+
+        /* --- CTA Section --- */
+        .cta-full {
+            height: 60vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+        }
+        .cta-full h2 { font-size: clamp(2rem, 8vw, 5rem); margin-bottom: 2rem; }
+        .magnet-btn {
+            padding: 1.5rem 4rem; border-radius: 100px; background: var(--blue-glow);
+            color: white; text-decoration: none; font-weight: 700; font-size: 1.2rem;
+            transition: 0.3s; border: none; cursor: pointer;
+        }
+        .magnet-btn:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,102,255,0.4); }
+
+        /* --- Footer --- */
+        footer { padding: 4rem 5%; display: flex; justify-content: space-between; border-top: 1px solid #222; color: var(--text-dim); font-size: 0.8rem; }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .large, .tall { grid-column: span 1; grid-row: span 1; }
+            .hero h1 { font-size: 4rem; letter-spacing: -2px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Mattia Mantero</div>
+        <div class="logo" style="font-size: 0.8rem;">Disponibile 2026</div>
+    </nav>
+
+    <header class="hero">
+        <span>FULL-STACK DEVELOPER</span>
+        <h1>MATTIA<br>MANTERO</h1>
+        <p style="color: var(--text-dim); margin-top: 2rem; max-width: 400px;">
+            Sviluppo interfacce che catturano lo sguardo e architetture che scalano il mercato.
+        </p>
+    </header>
+
+    <h2 class="section-title">Showcase & Skills</h2>
+    
+    <div class="bento-grid">
+        <div class="bento-item large">
+            <div>
+                <div class="icon-circle"><i class="fas fa-globe"></i></div>
+                <h3>Siti Web ad Alto Impatto</h3>
+                <p>Non solo codice, ma design strategico. Siti ottimizzati per conversioni e velocità estrema.</p>
+            </div>
+            <div class="work-display" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426');"></div>
+        </div>
+
+        <div class="bento-item">
+            <div class="icon-circle" style="background: var(--blue-glow); color: #fff;"><i class="fas fa-code"></i></div>
+            <h3>Clean Code</h3>
+            <p>Scrivo codice leggibile, scalabile e manutenibile utilizzando React e Next.js.</p>
+        </div>
+
+        <div class="bento-item">
+            <div class="icon-circle"><i class="fas fa-bolt"></i></div>
+            <h3>Performance</h3>
+            <p>Score 100/100 su Google Lighthouse. La velocità è la mia priorità.</p>
+        </div>
+
+        <div class="bento-item tall">
+            <div>
+                <div class="icon-circle"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile First</h3>
+                <p>Ogni pixel è pensato per riflettersi perfettamente su ogni dispositivo, dallo smartphone al monitor 4K.</p>
+            </div>
+            <div style="margin-top: 2rem; font-size: 4rem; opacity: 0.1; text-align: right;">
+                <i class="fas fa-layer-group"></i>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <div class="icon-circle"><i class="fas fa-search"></i></div>
+            <h3>SEO Pro</h3>
+            <p>Posizionamento organico per scalare i motori di ricerca.</p>
+        </div>
+    </div>
+
+    <section class="cta-full">
+        <h2>Hai un progetto ambizioso?</h2>
+        <a href="mailto:mattiamantero25@gmail.com" class="magnet-btn">Parliamo del tuo Brand</a>
+    </section>
+
+    <footer>
+        <p>© 2026 - Mattia Mantero</p>
+    </footer>
+
+    <script>
+        // Un piccolo tocco di magia: le card si muovono leggermente con il mouse
+        const cards = document.querySelectorAll('.bento-item');
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            cards.forEach(card => {
+                card.style.boxShadow = `${x}px ${y}px 30px rgba(0, 102, 255, 0.1)`;
+            });
+        });
+    </script>
+</body>
+</html>
